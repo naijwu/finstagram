@@ -25,11 +25,13 @@ export default function Home() {
     const { data, error } = await supabase
       .from('posts')
       .select()
+      
     setPosts(data)
     setLoading(false)
   }
 
   if(loading) return <p>Loading ...</p>
+
   if (!posts.length) return <p>No posts</p>
 
   return (
@@ -43,7 +45,7 @@ export default function Home() {
       <div>
         <h1>Posts</h1>
         {
-          posts.map(post => (
+          posts && posts.map(post => (
             <Link key={post.id} href={`/posts/${post.id}`}>
               <div>
                 <h2>{post.title}</h2>

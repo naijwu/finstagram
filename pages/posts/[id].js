@@ -8,11 +8,11 @@ export default function Post({ post }) {
     }
     return (
         <div>
-            <h1>{post.title}</h1>
-            <p>by {post.user_email}</p>
+            <h1>{post.title ? post.title : 'title err'}</h1>
+            <p>by {post.user_email ? post.user_email : 'email err'}</p>
             <div>
                 <p>
-                    {post.content}
+                    {post.content ? post.content : 'content err'}
                 </p>
             </div>
         </div>
