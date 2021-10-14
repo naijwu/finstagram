@@ -6,7 +6,7 @@ export default function Post({ post }) {
     if(router.isFallBack) {
         return <div>Loading...</div>
     }
-    if(!post) return;
+    if(!post) return null;
     return (
         <div>
             <h1>{post.title ? post.title : 'title err'}</h1>
